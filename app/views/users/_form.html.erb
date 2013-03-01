@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :firstName %><br />
+    <%= f.label :firstName, "First Name" %><br />
     <%= f.text_field :firstName %>
   </div>
   <div class="field">
-    <%= f.label :lastName %><br />
+    <%= f.label :lastName, "Last Name" %><br />
     <%= f.text_field :lastName %>
   </div>
   <div class="field">
@@ -24,23 +24,27 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :password_digest %><br />
-    <%= f.text_field :password_digest %>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
   </div>
   <div class="field">
     <%= f.label :gender %><br />
     <%= f.text_field :gender %>
   </div>
   <div class="field">
-    <%= f.label :birthMonth %><br />
+    <%= f.label :month %><br />
     <%= f.text_field :birthMonth %>
   </div>
   <div class="field">
-    <%= f.label :birthday %><br />
+    <%= f.label :day %><br />
     <%= f.number_field :birthday %>
   </div>
   <div class="field">
-    <%= f.label :birthYear %><br />
+    <%= f.label :year %><br />
     <%= f.number_field :birthYear %>
   </div>
   <div class="field">
@@ -52,6 +56,6 @@
     <%= f.text_field :state %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Start exploring" %>
   </div>
 <% end %>

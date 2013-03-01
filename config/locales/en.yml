@@ -3,3 +3,11 @@
 
 en:
   hello: "Hello world"
+
+
+# this changes the password_digest error msg to "Password"
+en:
+  activerecord:
+    attributes:
+      user:
+        password_digest: "Password"
