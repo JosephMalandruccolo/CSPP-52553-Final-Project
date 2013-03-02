@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Officialname:</b>
+  <%= @college.officialName %>
+</p>
+
+<p>
+  <b>Shortname:</b>
+  <%= @college.shortName %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @college.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @college.state %>
+</p>
+
+<p>
+  <b>Logo:</b>
+  <%= @college.logo %>
+</p>
+
+<p>
+  <b>Facebook:</b>
+  <%= @college.facebook %>
+</p>
+
+<p>
+  <b>Twitter:</b>
+  <%= @college.twitter %>
+</p>
+
+<p>
+  <b>Instagram:</b>
+  <%= @college.instagram %>
+</p>
+
+<p>
+  <b>Wikipedia:</b>
+  <%= @college.wikipedia %>
+</p>
+
+
+<%= link_to 'Edit', edit_college_path(@college) %> |
+<%= link_to 'Back', colleges_path %>
