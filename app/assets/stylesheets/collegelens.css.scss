@@ -1,13 +1,14 @@
 
 /* collegelens brand stand in */
 
-#collegelens {
+.collegelens {
+	font-size: 170%;
 	font-family: arial;
 	text-align: center;
 	color: blue;
 }
 
-#collegelens span {
+.collegelens span {
 	font-family: arial;
 	text-align: center;
 	color: gray;
@@ -15,3 +16,17 @@
 
 
 /*	header	*/
+
+.header {
+	height: 45px;
+	background-color: #F2F4FA;
+}
+
+
+
+/*	navigation	*/
+
+#nav {
+	height: 45px;
+	background-color: black;
+}
