@@ -27,8 +27,12 @@ class User < ActiveRecord::Base
   validates :state, presence: true
   
 
-
-
+  ##########################################
+  # => METHODS
+  ##########################################
+  def name
+    self.firstName + self.lastName
+  end
 
 
 
