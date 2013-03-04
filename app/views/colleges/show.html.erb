@@ -1,4 +1,12 @@
+<%= render 'layouts/navigation' %>
 <p id="notice"><%= notice %></p>
+
+
+<div class="info-col">
+  <%= show_seal @college %>
+  <p><%= @college.city%>, <%= @college.state %></p>
+</div>
+
 
 <p>
   <b>Officialname:</b>
@@ -10,15 +18,6 @@
   <%= @college.shortName %>
 </p>
 
-<p>
-  <b>City:</b>
-  <%= @college.city %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @college.state %>
-</p>
 
 <p>
   <b>Logo:</b>

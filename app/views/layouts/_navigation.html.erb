@@ -1,8 +1,12 @@
 <div class="navbar">
 
 	<nav>
+		<!-- profile page name -->
+		<% if !@user.nil? %>
 		<p><%= @user.firstName %> <%= @user.lastName %></p>
-		
+		<% elsif !@college.nil? %>
+		<p><%= @college.shortName %></p>
+		<% end %>
 	</nav>
 
 
