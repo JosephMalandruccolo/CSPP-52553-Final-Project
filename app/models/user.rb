@@ -3,6 +3,14 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+
+  ##########################################
+  # => RELATIONAL MODEL
+  ##########################################
+  has_many :colleges, through: :statuses, dependent: :destroy
+
+
+
   ##########################################
   # => CALLBACKS
   ##########################################

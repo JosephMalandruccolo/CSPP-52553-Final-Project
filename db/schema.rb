@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130302014743) do
+ActiveRecord::Schema.define(:version => 20130305044338) do
 
   create_table "colleges", :force => true do |t|
     t.string   "officialName"
@@ -27,6 +27,18 @@ ActiveRecord::Schema.define(:version => 20130302014743) do
     t.datetime "updated_at",   :null => false
     t.string   "website"
   end
+
+  create_table "statuses", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.string   "relationship"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "statuses", ["college_id"], :name => "index_statuses_on_college_id"
+  add_index "statuses", ["user_id", "college_id"], :name => "index_statuses_on_user_id_and_college_id", :unique => true
+  add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "firstName"
