@@ -1,7 +1,6 @@
 CollegeLens::Application.routes.draw do
 
 
-
   resources :colleges do
   	member do # generates URI like /colleges/1/followers
   		get :followers
@@ -16,8 +15,11 @@ CollegeLens::Application.routes.draw do
   end
 
   match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
+  match 'signout', to: 'sessions#destroy', via: :delete
 
   
+  resources :sessions, :only => [:new, :create, :destroy]
 
  
 end
