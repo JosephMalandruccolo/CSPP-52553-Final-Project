@@ -2,14 +2,15 @@
 /* collegelens brand stand in */
 
 .collegelens {
-	font-size: 170%;
+	font-size: 30px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, arial, "Lucida Grande", sans-serif;
 	font-family: arial;
 	text-align: center;
 	color: blue;
 }
 
 .collegelens span {
-	font-family: arial;
+	
 	text-align: center;
 	color: gray;
 }
@@ -19,7 +20,13 @@
 
 .header {
 	height: 45px;
-	background-color: #F2F4FA;
+	background-image: url('topNav.png');
+}
+
+
+.header img {
+	display: block;
+	margin: 0 auto;
 }
 
 
