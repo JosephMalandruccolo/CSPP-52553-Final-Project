@@ -10,7 +10,6 @@
 }
 
 .collegelens span {
-	
 	text-align: center;
 	color: gray;
 }
@@ -25,9 +24,17 @@
 
 
 .header img {
-	display: block;
-	margin: 0 auto;
+	float: left;
+	margin: 0 40%;
 }
+
+
+.header a {
+	float: left;
+}
+
+
+
 
 
 
