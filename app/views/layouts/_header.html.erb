@@ -2,6 +2,7 @@
 	<%= image_tag("collegelens.png", alt:'collegelens') %>
 	
 	<% if session[:user_id] %>
+		<%= User.find_by_id(session[:user_id]).name %>
 		<%= link_to "Sign out", signout_path %>
 	<% else %>
 		<%= link_to "Sign in", signin_path %>
