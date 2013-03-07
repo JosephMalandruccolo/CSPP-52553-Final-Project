@@ -6,13 +6,11 @@ class SessionsController < ApplicationController
 
 
 	def create
-		user = User.find_by_email(params[:email].downcase)
-		if user && user.authenticate(params[:password])
-			#sign user in and redirect to the user's show page
-			sign_in user
+		user = User.find_by_email(params[:email])
+		if user.present? && user.authenticate(params[:password])
+			session[:user_id] = user.id
 			redirect_to user
 		else
-			#create an error message and redisplay the signin form
 			flash[:notice] = 'invalid email/password combo'
 			render 'new'
 		end
@@ -20,6 +18,8 @@ class SessionsController < ApplicationController
 
 
 	def destroy
+		reset_session
+		redirect_to signin_path
 	end
 
 

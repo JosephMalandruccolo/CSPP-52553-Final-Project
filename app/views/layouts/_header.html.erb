@@ -1,10 +1,10 @@
 <div class="header">
 	<%= image_tag("collegelens.png", alt:'collegelens') %>
 	
-	<% if user.nil?  %>
-		<%= link_to "Sign in", signin_path %>
+	<% if session[:user_id] %>
+		<%= link_to "Sign out", signout_path %>
 	<% else %>
-		<%= link_to "Sign out", signout_path, :method => "delete" %>
+		<%= link_to "Sign in", signin_path %>
 	<% end %>
 	
 	
