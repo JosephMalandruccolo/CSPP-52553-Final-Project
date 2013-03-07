@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   # => RELATIONAL MODEL
   ##########################################
   has_many :colleges, through: :statuses, dependent: :destroy
+  has_many :statuses
 
 
 

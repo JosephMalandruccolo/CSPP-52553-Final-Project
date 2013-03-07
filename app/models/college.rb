@@ -6,6 +6,7 @@ class College < ActiveRecord::Base
   # => RELATIONAL MODEL
   ##########################################
   has_many :users, through: :statuses, dependent: :destroy
+  has_many :statuses
 
 
 

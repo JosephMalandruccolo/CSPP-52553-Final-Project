@@ -1,10 +1,19 @@
 class UsersController < ApplicationController
 
   before_filter :authorize_user, :only => [:edit, :update]
+  before_filter :admin_user, :only => :destroy
 
   def authorize_user
     @user = User.find(params[:id])
     if @user.id != session[:user_id]
+      redirect_to signin_path, notice: "Nice try"
+    end
+  end
+
+
+  def admin_user
+    @user = User.find(session[:user_id])
+    if !@user.admin?
       redirect_to signin_path, notice: "Nice try"
     end
   end
