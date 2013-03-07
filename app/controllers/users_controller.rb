@@ -1,4 +1,15 @@
 class UsersController < ApplicationController
+
+  before_filter :authorize_user, :only => [:edit, :update]
+
+  def authorize_user
+    @user = User.find(params[:id])
+    if @user.id != session[:user_id]
+      redirect_to signin_path, notice: "Nice try"
+    end
+  end
+
+
   # GET /users
   # GET /users.json
   def index
