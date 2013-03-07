@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   ##########################################
   # ensures uniqueness of case insensitive emails
   before_save { |user| user.email = email.downcase }
+  before_save :create_remember_token
 
 
   ##########################################
