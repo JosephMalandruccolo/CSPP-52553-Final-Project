@@ -1,4 +1,14 @@
 class CollegesController < ApplicationController
+
+  before_filter :admin_user, :only => [:destroy, :edit, :update, :new, :create]
+
+  def admin_user
+    @user = User.find(session[:user_id])
+    if !@user.admin?
+      redirect_to signin_path, notice: "Nice try"
+    end
+  end
+
   # GET /colleges
   # GET /colleges.json
   def index
