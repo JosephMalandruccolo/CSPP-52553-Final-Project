@@ -37,10 +37,48 @@ class User < ActiveRecord::Base
   
 
   ##########################################
+  # => CONSTANTS
+  ##########################################
+  DEFAULT_RELATIONSHIP = "following"
+
+  ##########################################
   # => METHODS
   ##########################################
   def name
     self.firstName + self.lastName
   end
 
+
+  def following?(college)
+    statuses.find_by_college_id(college)
+  end
+
+
+  def follow!(college)
+    self.statuses.create!(:college_id => college.id, :relationship => DEFAULT_RELATIONSHIP)
+  end
+
+
+  def unfollow!(college)
+    self.statuses.find_by_college_id(college).destroy
+  end
+
+
+  def colleges_followed
+    College.find_by_id(Status.find_by_user_id(self))
+  end
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+

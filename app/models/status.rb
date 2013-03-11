@@ -5,8 +5,8 @@ class Status < ActiveRecord::Base
   ##########################################
   # => RELATIONAL MODEL
   ##########################################
-  belongs_to :user
-  belongs_to :college
+  belongs_to :user, :foreign_key => "user_id", :class_name => "User"
+  belongs_to :college, :foreign_key => "college_id", :class_name => "College"
 
 
 

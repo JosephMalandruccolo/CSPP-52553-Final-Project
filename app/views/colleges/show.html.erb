@@ -5,6 +5,7 @@
 <div class="info-col">
   <%= show_seal @college %>
   <p><%= @college.city%>, <%= @college.state %></p>
+  <%= render partial: 'layouts/status', :locals => { college: @college } %>
 </div>
 
 

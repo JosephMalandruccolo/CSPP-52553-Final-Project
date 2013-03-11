@@ -23,4 +23,19 @@ class College < ActiveRecord::Base
   validates :website, presence: true
 
 
+  ##########################################
+  # => METHODS
+  ##########################################
+
+  #return all users following this college
+  def users_following
+    statuses = Status.where(college_id: self.id)
+    users = []
+    statuses.each do |status|
+      users.push(User.find_by_id(status[:user_id]))
+    end
+    users
+  end
+
+
 end
