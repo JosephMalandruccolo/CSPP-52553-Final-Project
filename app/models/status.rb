@@ -16,6 +16,6 @@ class Status < ActiveRecord::Base
   validates :user_id, presence: true
   validates :college_id, presence: true
   validates :relationship, presence: true
-
+  validates_uniqueness_of :user_id, scope: :college_id
 
 end
