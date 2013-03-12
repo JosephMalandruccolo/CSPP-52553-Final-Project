@@ -19,9 +19,10 @@ class StatusesController < ApplicationController
 
 
 	def destroy
-		@user = Status.find(params[:id]).user_id
-		@college = Status.find(params[:id]).college_id
+		@user = User.find(session[:user_id])
+		@college = College.find(params[:college_id])
 		@user.unfollow!(@college)
+		redirect_to @college
 	end
 
 

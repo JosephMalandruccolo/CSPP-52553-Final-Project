@@ -4,8 +4,15 @@
 </div>
 <br />
 <div>
-	<%= form_tag({ controller: 'statuses', action: 'create' }) do %>
-	<%= hidden_field_tag 'college_id', college.id %>
-	<%= submit_tag 'Follow', :class => 'btn' %>
+	<% if !User.find(session[:user_id]).following?(college.id) %>
+		<%= form_tag({ controller: 'statuses', action: 'create' }) do %>
+		<%= hidden_field_tag 'college_id', college.id %>
+		<%= submit_tag 'Follow', :class => 'btn' %>
+		<% end %>
+	<% else %>
+		<%= form_tag({ controller: 'statuses', action: 'destroy' }) do %>
+		<%= hidden_field_tag 'college_id', college.id %>
+		<%= submit_tag 'Unfollow', :class => 'btn' %>
+		<% end %>
 	<% end %>  
 </div>
