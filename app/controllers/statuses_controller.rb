@@ -1,9 +1,9 @@
 class StatusesController < ApplicationController
 
-	before_filter: :authorize_user
+	before_filter :authorize_user
 
 	def authorize_user
-    	@user = User.find(params[:id])
+    	@user = User.find(session[:user_id])
     	if @user.id != session[:user_id]
       	redirect_to signin_path, notice: "Nice try"
     	end
@@ -11,8 +11,8 @@ class StatusesController < ApplicationController
 
 
 	def create
-		@user = User.find(params[:status][:user_id])
-		@college = College.find(params[:status][:college_id])
+		@user = User.find(session[:user_id])
+		@college = College.find(params[:college_id])
 		@user.follow!(@college)
 		redirect_to @college
 	end

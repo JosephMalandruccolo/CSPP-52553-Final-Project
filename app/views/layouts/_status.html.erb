@@ -1,5 +1,11 @@
 <div>
 	<%= college.users_following.nil? ? 0 : college.users_following.count %><br />
 	<p>Followers</p>
-
+</div>
+<br />
+<div>
+	<%= form_tag({ controller: 'statuses', action: 'create' }) do %>
+	<%= hidden_field_tag 'college_id', college.id %>
+	<%= submit_tag 'Follow', :class => 'btn' %>
+	<% end %>  
 </div>

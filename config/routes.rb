@@ -18,6 +18,9 @@ CollegeLens::Application.routes.draw do
   match '/signin', to: 'sessions#new'
   match '/signout', to: 'sessions#destroy'
 
+  match '/follow', to: 'statuses#create'
+  match '/unfollow', to: 'statuses#destroy'
+
   
   resources :sessions, :only => [:new, :create, :destroy]
 
