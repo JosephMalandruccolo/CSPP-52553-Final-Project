@@ -19,7 +19,6 @@ class College < ActiveRecord::Base
   validates :state, presence: true, length: { is: 2 }
   validates :officialName, presence: true
   validates :shortName, :presence => true
-  validates :logo, :presence => true
   validates :website, presence: true
 
 

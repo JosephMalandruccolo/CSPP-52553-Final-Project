@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
   # => METHODS
   ##########################################
   def name
-    self.firstName + self.lastName
+    "#{self.firstName} #{self.lastName}"
   end
 
 
