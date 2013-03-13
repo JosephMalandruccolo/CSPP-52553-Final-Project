@@ -17,8 +17,16 @@
 
 
   <div class="field">
+    <%= f.hidden_field :retained_seal_image %><br />
+  </div>
+
+  <div class="field">
     <%= f.label :seal_image, "Attach the university's seal" %><br />
     <%= f.file_field :seal_image, as: :file %><br />
+  </div>
+  <div class="field">
+    <%= f.label :remove_seal_image, "Check box to remove seal from database" %>
+    <%= f.check_box :remove_seal_image, as: :boolean %><br />
   </div>
   <div class="field">
     <%= f.label :officialName %><br />

@@ -1,5 +1,5 @@
 class College < ActiveRecord::Base
-  attr_accessible :city, :facebook, :instagram, :seal_image, :officialName, :shortName, :state, :twitter, :wikipedia, :website
+  attr_accessible :city, :facebook, :instagram, :seal_image, :officialName, :shortName, :state, :twitter, :wikipedia, :website, :retained_seal_image, :remove_seal_image
 
 
   image_accessor :seal_image
