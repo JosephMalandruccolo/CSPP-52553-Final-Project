@@ -7,6 +7,7 @@
   <strong><p><%= @college.officialName %></p></strong>
   <p><%= @college.city%>, <%= @college.state %></p>
   <%= render partial: 'layouts/status', :locals => { college: @college } %>
+  <%= render 'photos/add_photo', college: @college %>
 
   <%= link_to 'Edit', edit_college_path(@college) %> |
   <%= link_to 'Back', colleges_path %>
