@@ -6,44 +6,21 @@
 
 
 
-
-<div class="info-col">
-  <%= render 'colleges/seal', args: '225x250#', college: @college %>
+<div id="info-col" class="shadow3">
+  <%= render 'colleges/seal', args: '150x150#', college: @college %>
   <strong><p><%= @college.officialName %></p></strong>
   <p><%= @college.city%>, <%= @college.state %></p>
   <%= render partial: 'layouts/status', :locals => { college: @college } %>
+
+  <%= link_to 'Edit', edit_college_path(@college) %> |
+  <%= link_to 'Back', colleges_path %>
+</div>
+<div id="">
+
 </div>
 
 
 
-<p>
-  <b>Shortname:</b>
-  <%= @college.shortName %>
-</p>
 
 
 
-
-<p>
-  <b>Facebook:</b>
-  <%= @college.facebook %>
-</p>
-
-<p>
-  <b>Twitter:</b>
-  <%= @college.twitter %>
-</p>
-
-<p>
-  <b>Instagram:</b>
-  <%= @college.instagram %>
-</p>
-
-<p>
-  <b>Wikipedia:</b>
-  <%= @college.wikipedia %>
-</p>
-
-
-<%= link_to 'Edit', edit_college_path(@college) %> |
-<%= link_to 'Back', colleges_path %>
