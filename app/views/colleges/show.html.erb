@@ -9,7 +9,7 @@
 
 <div class="info-col">
   <%= render 'colleges/seal', args: '225x250#', college: @college %>
-  <p><strong><%= @college.officialName %></strong></p>
+  <strong><p><%= @college.officialName %></p></strong>
   <p><%= @college.city%>, <%= @college.state %></p>
   <%= render partial: 'layouts/status', :locals => { college: @college } %>
 </div>
