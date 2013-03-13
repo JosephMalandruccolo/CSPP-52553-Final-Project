@@ -2,17 +2,19 @@
 <p id="notice"><%= notice %></p>
 
 
+
+
+
+
+
 <div class="info-col">
-  <%= show_seal @college %>
+  <%= render 'colleges/seal', args: '225x250#', college: @college %>
+  <p><strong><%= @college.officialName %></strong></p>
   <p><%= @college.city%>, <%= @college.state %></p>
   <%= render partial: 'layouts/status', :locals => { college: @college } %>
 </div>
 
 
-<p>
-  <b>Officialname:</b>
-  <%= @college.officialName %>
-</p>
 
 <p>
   <b>Shortname:</b>
@@ -20,10 +22,7 @@
 </p>
 
 
-<p>
-  <b>Logo:</b>
-  <%= @college.logo %>
-</p>
+
 
 <p>
   <b>Facebook:</b>

@@ -1,0 +1,5 @@
+<% if college.seal_image.present? %>
+	<%= image_tag college.seal_image.thumb(args).url, :class => 'seal' %>
+<% else %>
+	<img src="http://placehold.it/<%= args.gsub(/\W/, '') %>&amp;text=seal+placeholder" alt="seal placeholder" class="seal"> 
+<% end %>

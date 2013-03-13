@@ -3,10 +3,10 @@
 <table>
   <tr>
     <th>Officialname</th>
+    <th>Seal</th>
     <th>Shortname</th>
     <th>City</th>
     <th>State</th>
-    <th>Logo</th>
     <th>Facebook</th>
     <th>Twitter</th>
     <th>Instagram</th>
@@ -19,10 +19,10 @@
 <% @colleges.each do |college| %>
   <tr>
     <td><%= college.officialName %></td>
+    <td><%= render 'colleges/seal', args: '16x16#', college: college %></td>
     <td><%= college.shortName %></td>
     <td><%= college.city %></td>
     <td><%= college.state %></td>
-    <td><%= college.logo %></td>
     <td><%= college.facebook %></td>
     <td><%= college.twitter %></td>
     <td><%= college.instagram %></td>

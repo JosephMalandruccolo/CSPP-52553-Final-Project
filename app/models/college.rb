@@ -1,12 +1,20 @@
 class College < ActiveRecord::Base
-  attr_accessible :city, :facebook, :instagram, :logo, :officialName, :shortName, :state, :twitter, :wikipedia, :website
+  attr_accessible :city, :facebook, :instagram, :seal_image, :officialName, :shortName, :state, :twitter, :wikipedia, :website
 
+
+  image_accessor :seal_image
 
   ##########################################
   # => RELATIONAL MODEL
   ##########################################
   has_many :users, through: :statuses, dependent: :destroy
   has_many :statuses
+
+
+  ##########################################
+  # => LOGO (SEAL)
+  ##########################################
+  
 
 
 

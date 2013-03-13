@@ -11,6 +11,15 @@
     </div>
   <% end %>
 
+  <div>
+    <%= render 'colleges/seal', args:('225x250#'), college: @college %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :seal_image, "Attach the university's seal" %><br />
+    <%= f.file_field :seal_image, as: :file %><br />
+  </div>
   <div class="field">
     <%= f.label :officialName %><br />
     <%= f.text_field :officialName %>
@@ -47,6 +56,7 @@
     <%= f.label :website %><br />
     <%= f.text_field :website %>
   </div>
+  
   <div class="actions">
     <%= f.submit %>
   </div>

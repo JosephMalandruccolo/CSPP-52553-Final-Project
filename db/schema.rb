@@ -11,21 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130307074827) do
+ActiveRecord::Schema.define(:version => 20130313002545) do
 
   create_table "colleges", :force => true do |t|
     t.string   "officialName"
     t.string   "shortName"
     t.string   "city"
     t.string   "state"
-    t.string   "logo"
+    t.string   "seal_image_uid"
     t.string   "facebook"
     t.string   "twitter"
     t.string   "instagram"
     t.string   "wikipedia"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.string   "website"
+    t.string   "seal_image_name"
   end
 
   create_table "statuses", :force => true do |t|
