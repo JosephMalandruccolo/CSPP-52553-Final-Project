@@ -10,6 +10,7 @@ class College < ActiveRecord::Base
   has_many :users, through: :statuses, dependent: :destroy
   has_many :statuses
 
+  has_many :photos
 
 
   ##########################################
