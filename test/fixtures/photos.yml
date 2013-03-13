@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  photo_image_uid: 
+  photo_image_name: 
+  user_id: 
+  college_id: 1
+
+two:
+  photo_image_uid: 
+  photo_image_name: 
+  user_id: 
+  college_id: 1

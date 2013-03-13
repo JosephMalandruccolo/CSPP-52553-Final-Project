@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313002545) do
+ActiveRecord::Schema.define(:version => 20130313064848) do
 
   create_table "colleges", :force => true do |t|
     t.string   "officialName"
@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(:version => 20130313002545) do
     t.string   "website"
     t.string   "seal_image_name"
   end
+
+  create_table "photos", :force => true do |t|
+    t.string   "photo_image_uid"
+    t.string   "photo_image_name"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "photos", ["college_id"], :name => "index_photos_on_college_id"
 
   create_table "statuses", :force => true do |t|
     t.integer  "user_id"
