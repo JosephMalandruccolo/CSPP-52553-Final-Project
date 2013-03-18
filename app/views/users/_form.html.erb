@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <% small = 15 %>
-  <% large = 35 %>
-  <div class="field">
+  <% small = 16 %>
+  <% large = 34 %>
+  <div>
     <%= f.text_field :firstName, placeholder: "First Name", size: small %>
   </div>
-  <div class="field">
-    <%= f.text_field :lastName, placeholder: "Last Name", size: small %>
+  <div>
+    <%= f.text_field :lastName, placeholder: "Last Name", size: small, style: "margin-left:15px;" %>
   </div>
   <div class="field">
     <%= f.text_field :email, placeholder: "Your email", size: large %>
@@ -43,20 +43,10 @@
     <%= f.select :birthYear, (1908..2013), prompt: "Year:" %>
   </div>
   <div class="field">
-    <%= f.label :day %><br />
-    <%= f.number_field :birthday %>
+    <%= f.text_field :city, placeholder: "City", size: small %>
   </div>
   <div class="field">
-    <%= f.label :year %><br />
-    <%= f.number_field :birthYear %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br />
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br />
-    <%= f.text_field :state %>
+    <%= f.text_field :state, placeholder: "State", size: small %>
   </div>
   <div class="actions">
     <%= f.submit submit_text ||= "Submit" %>

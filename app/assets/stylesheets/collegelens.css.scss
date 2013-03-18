@@ -78,7 +78,7 @@ strong {
   position: relative; float: left;
   width: 500px;
   height: 100%;
-  border: solid 2px;
+  
 }
 
 
@@ -146,7 +146,7 @@ strong {
 }
 
 
-.new_user label {
+.new_user label, select {
   display:block;
   font-weight:lighter;
   text-align:right;
@@ -169,6 +169,38 @@ strong {
 }
 
 
+#landing-carousel {
+  padding-top: 50px;
+  padding-left: 75px;
+}
+
+
+#landing-carousel h1 {
+  font-family: Helvetica, Arial, Veranda, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+
+.carousel {
+  width: 500px;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  border: solid 1px;
+}
+
+
+.carousel li {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+
 
 
 /*  shadow */
@@ -178,6 +210,7 @@ strong {
   -khtml-box-shadow:rgba(0,0,0,0.3) 0 2px 3px; -ms-box-shadow:rgba(0,0,0,0.3) 0 2px 3px; -o-box-shadow:rgba(0,0,0,0.3) 0 2px 3px; -moz-box-shadow:rgba(0,0,0,0.3) 0 2px 3px; -webkit-box-shadow:rgba(0,0,0,0.3) 0 2px 3px; box-shadow:rgba(0,0,0,0.3) 0 2px 3px; }
 .shadow3 {
   -khtml-box-shadow:rgba(0,0,0,0.3) 0px 0px 8px; -ms-box-shadow:rgba(0,0,0,0.3) 0px 0px 8px; -o-box-shadow:rgba(0,0,0,0.3) 0px 0px 8px; -moz-box-shadow:rgba(0,0,0,0.3) 0px 0px 8px; -webkit-box-shadow:rgba(0,0,0,0.3) 0px 0px 8px; box-shadow:rgba(0,0,0,0.3) 0px 0px 8px; }
+
 
 
 
