@@ -34,19 +34,16 @@
   </div>
   <div class="field">
     <p>Birthday:</p>
-    <% month_options = [] %>
-    <% Date::MONTHNAMES.slice(1..12).each do |month| %>
-    <% month_options.push([month, month]) %>
-    <% end %>
-    <%= f.select :birthMonth, options_for_select(month_options), prompt: "Month:" %>
+    <%= f.select :birthMonth, options_for_select(@month_options), prompt: "Month:" %>
     <%= f.select :birthday, (1..31), prompt: "Day:" %>
-    <%= f.select :birthYear, (1908..2013), prompt: "Year:" %>
+    <%= f.select :birthYear, @birthYearRange, prompt: "Year:" %>
+  </div>
+  <div class="field">
+    <p>Hometown:</p>
+    <%= f.select :state, options_for_select(@unique_states), prompt: "State:" %>
   </div>
   <div class="field">
     <%= f.text_field :city, placeholder: "City", size: small %>
-  </div>
-  <div class="field">
-    <%= f.text_field :state, placeholder: "State", size: small %>
   </div>
   <div class="actions">
     <%= f.submit submit_text ||= "Submit" %>

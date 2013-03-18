@@ -46,6 +46,26 @@ class UsersController < ApplicationController
   def new
     @user = User.new
 
+
+
+    @month_options = []
+    Date::MONTHNAMES.slice(1..12).each do |month|
+      @month_options.push([month, month])
+    end
+
+
+    @birthYearRange = []
+    110.times do |year|
+      @birthYearRange.push(Time.now.year - year)
+    end
+
+
+    @unique_states = []
+    City.select("DISTINCT(STATE)").each do |state|
+      #format [state, state] compatible with rails select
+      @unique_states.push([state[:state], state[:state]])
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
