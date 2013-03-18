@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313073156) do
+ActiveRecord::Schema.define(:version => 20130318193832) do
+
+  create_table "cities", :force => true do |t|
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.decimal  "latitude",   :precision => 15, :scale => 10
+    t.decimal  "longitude",  :precision => 15, :scale => 10
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+  end
+
+  add_index "cities", ["state"], :name => "index_cities_on_state"
 
   create_table "colleges", :force => true do |t|
     t.string   "officialName"

@@ -1,0 +1,11 @@
+<h1>Upload city data</h1>
+
+
+<%= form_tag 'saveCities', multipart: true do %>
+<%= 	file_field_tag :file %>
+<%= 	submit_tag "Import city data" %>
+<% end %>
+
+
+
+
