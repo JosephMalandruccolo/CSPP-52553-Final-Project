@@ -2,7 +2,8 @@ html, body {
   margin:0; padding:0; overflow-x:hidden;
   font-size: 9pt; color:#464646; font-family: Helvetica, Arial, Veranda, sans-serif; 
   background:url('background.png') repeat;
-  z-index:0; 
+  z-index:0;
+  min-width: 1100px; 
 }
 
 
@@ -35,7 +36,7 @@ strong {
 
 .navbar {
 	height: 45px;
-	background-color: #495CB3;
+	background-image: url('subnav.png');
 }
 
 
@@ -45,6 +46,34 @@ strong {
   height:100%; width:190px; margin:0 0; padding:20px; min-height:700px;
   background:#ffffff; 
 }
+
+#info-col-top {
+  height: 45px;
+  width: 190px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 0;
+}
+
+
+#info-col-top p {
+  font-size: 12px;
+  color: #ffffff;
+  font-family: Helvetica, Arial, Veranda, sans-serif;
+  padding-right: 0px;
+  position: absolute;
+  padding-top: 15px;
+  padding-left: 5px;
+  display: inline;
+}
+
+#info-col-top img {
+  padding-top: 10px;
+  padding-left: 5px;
+  display: inline;
+}
+
+
 
 /*  photo grid */
 #gridal {

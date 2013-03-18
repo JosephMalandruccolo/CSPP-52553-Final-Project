@@ -1,13 +1,20 @@
 <div class="navbar">
 
-	<nav>
+	
+
+	
+	<div id="info-col-top" class="shadow3">
+
+		<%= image_tag 'cap.png' %>
+
+
 		<!-- profile page name -->
 		<% if !@user.nil? %>
-		<p><%= @user.firstName %> <%= @user.lastName %></p>
+			<p><%= @user.firstName %> <%= @user.lastName %></p>
 		<% elsif !@college.nil? %>
-		<p><%= @college.shortName %></p>
+			<p><%= @college.shortName %></p>
 		<% end %>
-	</nav>
-
+	
+	</div>
 
 </div>

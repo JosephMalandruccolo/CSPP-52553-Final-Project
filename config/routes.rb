@@ -1,6 +1,8 @@
 CollegeLens::Application.routes.draw do
 
 
+  root to: 'users#new'
+
   get "colleges/photos/show"
   get "colleges/:id/photos/new", controller: "photos", action: "new", as: "new_photo_path"
 
