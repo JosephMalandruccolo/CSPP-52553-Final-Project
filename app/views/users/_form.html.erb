@@ -11,33 +11,36 @@
     </div>
   <% end %>
 
+  <% small = 15 %>
+  <% large = 35 %>
   <div class="field">
-    <%= f.label :firstName, "First Name" %><br />
-    <%= f.text_field :firstName %>
+    <%= f.text_field :firstName, placeholder: "First Name", size: small %>
   </div>
   <div class="field">
-    <%= f.label :lastName, "Last Name" %><br />
-    <%= f.text_field :lastName %>
+    <%= f.text_field :lastName, placeholder: "Last Name", size: small %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, placeholder: "Your email", size: large %>
   </div>
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password, placeholder: "New Password", size: large %>
   </div>
   <div class="field">
-    <%= f.label :password_confirmation, "Confirmation" %><br />
-    <%= f.password_field :password_confirmation %>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm password", size: large %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br />
-    <%= f.text_field :gender %>
+    <%= f.radio_button :gender, 'f' %> <%= f.label :gender, "Female" %>
+    <%= f.radio_button :gender, 'm' %> <%= f.label :gender, "Male" %>
   </div>
   <div class="field">
-    <%= f.label :month %><br />
-    <%= f.text_field :birthMonth %>
+    <p>Birthday:</p>
+    <% month_options = [] %>
+    <% Date::MONTHNAMES.slice(1..12).each do |month| %>
+    <% month_options.push([month, month]) %>
+    <% end %>
+    <%= f.select :birthMonth, options_for_select(month_options), prompt: "Month:" %>
+    <%= f.select :birthday, (1..31), prompt: "Day:" %>
+    <%= f.select :birthYear, (1908..2013), prompt: "Year:" %>
   </div>
   <div class="field">
     <%= f.label :day %><br />
