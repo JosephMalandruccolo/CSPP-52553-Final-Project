@@ -34,16 +34,8 @@
   </div>
   <div class="field">
     <p>Birthday:</p>
-    <% @month_options = []
-    Date::MONTHNAMES.slice(1..12).each do |month|
-      @month_options.push([month, month])
-    end %>
     <%= f.select :birthMonth, options_for_select(@month_options), prompt: "Month:" %>
     <%= f.select :birthday, (1..31), prompt: "Day:" %>
-    <% @birthYearRange = []
-    110.times do |year|
-      @birthYearRange.push(Time.now.year - year)
-    end %>
     <%= f.select :birthYear, @birthYearRange, prompt: "Year:" %>
   </div>
 
