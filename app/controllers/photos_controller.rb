@@ -11,6 +11,7 @@ class PhotosController < ApplicationController
   def show
     @photo_to_show = Photo.find_by_id(params[:photo_id])
     @college = College.find_by_id(@photo_to_show.college_id)
+    @commentable = Comment.where("commentable_id = ? AND commentable_type = ?", @photo_to_show.id, @photo_to_show.class.to_s ).all
 
     respond_to do |format|
       format.html # show.html.erb

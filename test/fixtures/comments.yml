@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  commentable_id: 1
+  commentable_class: MyString
+  user_id: 1
+  college_id: 1
+  text: MyString
+
+two:
+  commentable_id: 1
+  commentable_class: MyString
+  user_id: 1
+  college_id: 1
+  text: MyString

@@ -8,7 +8,7 @@ class Photo < ActiveRecord::Base
   ##########################################
   belongs_to :user, :foreign_key => "user_id", :class_name => "User"
   belongs_to :college, :foreign_key => "college_id", :class_name => "College"
-
+  has_many :comments, as: :commentable
 
   ##########################################
   # => VALIDATIONS

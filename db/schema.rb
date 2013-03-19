@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319064757) do
+ActiveRecord::Schema.define(:version => 20130319094533) do
 
   create_table "cities", :force => true do |t|
     t.string   "city"
@@ -40,6 +40,18 @@ ActiveRecord::Schema.define(:version => 20130319064757) do
     t.string   "website"
     t.string   "seal_image_name"
   end
+
+  create_table "comments", :force => true do |t|
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.integer  "user_id"
+    t.integer  "college_id"
+    t.text     "text"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
 
   create_table "photos", :force => true do |t|
     t.string   "photo_image_uid"

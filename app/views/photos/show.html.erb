@@ -14,4 +14,9 @@
 </div>
 <div id="gridal">
 	<%= image_tag @photo_to_show.photo_image.thumb('800x800>').url %>
+	<p><%= @photo_to_show.caption %></p>
+	<% @commentable.each do |c| %>
+	<% u = User.find_by_id(c.user_id) %>
+	<p><%= c.text %> by <%= "#{u.firstName} #{u.lastName}" %></p>
+	<% end %>
 </div>
