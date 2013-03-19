@@ -7,6 +7,7 @@ CollegeLens::Application.routes.draw do
   get "colleges/:id/photos/new", controller: "photos", action: "new", as: "new_photo_path"
   post "colleges/:id/photos/create", controller: "photos", action: "create", as: "photos_path"
 
+  get "photos/show", controller: "photos", action: "show"
 
   resources :colleges do
   	member do # generates URI like /colleges/1/followers

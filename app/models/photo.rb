@@ -17,7 +17,7 @@ class Photo < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :tag, :presence => true
   validates :photo_image, :presence => true
-  validates_size_of :photo_image, maximum: 300.kilobytes
+  #validates_size_of :photo_image, maximum: 900.kilobytes
   validates_property :format, of: :photo_image, :in => [:jpeg, :png, :gif, :jpg]
   validates_property :mime_type, of: :photo_image, :in => ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'], case_sensitive: false
 

@@ -1,2 +1,17 @@
-<h1>Photos#show</h1>
-<p>Find me in app/views/photos/show.html.erb</p>
+<%= render 'layouts/navigation' %>
+<p id="notice"><%= notice %></p>
+
+
+<div id="info-col" class="shadow3">
+  <%= render 'colleges/seal', args: '150x150#', college: @college %>
+  <strong><p><%= @college.officialName %></p></strong>
+  <p><%= @college.city%>, <%= @college.state %></p>
+  <%= render partial: 'layouts/status', :locals => { college: @college } %>
+  <%= render 'photos/add_photo', college: @college %>
+
+  <%= link_to 'Edit', edit_college_path(@college) %> |
+  <%= link_to 'Back', colleges_path %>
+</div>
+<div id="gridal">
+	<%= image_tag @photo_to_show.photo_image.thumb('800x800>').url %>
+</div>

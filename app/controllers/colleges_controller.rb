@@ -24,6 +24,7 @@ class CollegesController < ApplicationController
   # GET /colleges/1.json
   def show
     @college = College.find(params[:id])
+    @college_photos = Photo.where(college_id: params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

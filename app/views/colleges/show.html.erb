@@ -13,15 +13,17 @@
   <%= link_to 'Back', colleges_path %>
 </div>
 <div id="gridal">
-	<div class="tile">
-	</div>
-	<div class="tile">
-	</div>
-	<div class="tile">
-	</div>
-	<div class="tile">
-	</div>
-
+	<table>
+		<% @college_photos.each_slice(4) do |slice| %>
+			<tr>
+			<% slice.each do |p| %>
+			<td class="photo_index">
+				<%= link_to(image_tag(p.photo_image.thumb('200x200#').url), {:controller => 'photos', :action => 'show', :photo_id => p.id }) %>
+			</td>
+		<% end %>
+		</tr>
+		<% end %>
+	</table>
 </div>
 
 

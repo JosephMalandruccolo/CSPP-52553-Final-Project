@@ -9,7 +9,13 @@ class PhotosController < ApplicationController
   end
 
   def show
+    @photo_to_show = Photo.find_by_id(params[:photo_id])
+    @college = College.find_by_id(@photo_to_show.college_id)
 
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @college }
+    end
   end
 
   def new
