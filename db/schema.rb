@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130319094533) do
+ActiveRecord::Schema.define(:version => 20130319224207) do
 
   create_table "cities", :force => true do |t|
     t.string   "city"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20130319094533) do
     t.datetime "updated_at",                                 :null => false
   end
 
+  add_index "cities", ["city"], :name => "index_cities_on_city"
   add_index "cities", ["state"], :name => "index_cities_on_state"
 
   create_table "colleges", :force => true do |t|
@@ -89,9 +90,11 @@ ActiveRecord::Schema.define(:version => 20130319094533) do
     t.integer  "birthYear"
     t.string   "city"
     t.string   "state"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.boolean  "admin",           :default => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
+    t.boolean  "admin",             :default => false
+    t.string   "avatar_image_uid"
+    t.string   "avatar_image_name"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

@@ -6,7 +6,7 @@
 
 
 <div id="info-col" class="shadow3">
-  <%= avatar_for @user %>
+  <%= render 'users/avatar', args:('115x115#'), user: @user %>
   <p><%= @user.city%>, <%= @user.state %></p>
   <%= link_to 'Edit my profile', edit_user_path(@user) %> |
   <%= link_to 'Explore colleges', colleges_path %>

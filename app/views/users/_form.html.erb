@@ -11,6 +11,27 @@
     </div>
   <% end %>
 
+  <div>
+    <%= render 'users/avatar', args:('115x115#'), user: @user %>
+  </div>  
+
+  <% if !@user.id.nil? %>
+  <div class="field">
+    <%= f.hidden_field :retained_avatar_image %><br />
+  </div>
+
+  <div class="field">
+    <%= f.label :avatar_image, "Upload a profile picture" %><br />
+    <%= f.file_field :avatar_image, as: :file %><br />
+  </div>
+  <div class="field">
+    <%= f.label :remove_avatar_image, "Check box to delete your profile picture" %>
+    <%= f.check_box :remove_avatar_image, as: :boolean %><br />
+  </div>
+  <% end %>
+
+
+
   <% small = 16 %>
   <% large = 34 %>
   <div>

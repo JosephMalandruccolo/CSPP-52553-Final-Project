@@ -1,0 +1,5 @@
+<% if user.avatar_image.present? %>
+	<%= image_tag user.avatar_image.thumb(args).url, :class => 'avatar' %>
+<% else %>
+	<img src="http://placehold.it/<%= args.gsub(/\W/, '') %>&amp;text=seal+placeholder" alt="seal placeholder" class="seal"> 
+<% end %>
