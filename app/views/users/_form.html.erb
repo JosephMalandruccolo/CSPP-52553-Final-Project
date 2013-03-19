@@ -40,15 +40,11 @@
   </div>
 
   <div class="field">
-    <%= f.text_field :hometown, placeholder: "Hometown", size: large %>
+    <%= f.text_field :hometown, placeholder: "Hometown", size: large, data: { autocomplete_source: '/listCities' } %>
   </div>
 
 
 
-  <div class="field">
-    <p>Hometown:</p>
-    <%= f.select :hometown , options_for_select(@hometowns), prompt: "Hometown:" %>
-  </div>
   <div class="actions">
     <%= f.submit submit_text ||= "Submit" %>
   </div>

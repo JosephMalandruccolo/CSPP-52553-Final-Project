@@ -109,6 +109,14 @@ strong {
 }
 
 
+/*  individual photo page */
+.photo_caption {
+  font-size: 14pt; 
+  color:#464646; 
+  font-family: Helvetica, Arial, Veranda, sans-serif; 
+
+}
+
 
 /*  sign-up page  */
 #signup-ask {
@@ -323,3 +331,38 @@ strong {
      -moz-box-shadow: none;
           box-shadow: none;
 }
+
+ul.ui-autocomplete {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: solid 1px #999;
+  cursor: default;
+  li {
+    background-color: #FFF;
+    border-top: solid 1px #DDD;
+    margin: 0;
+    padding: 0;
+    a {
+      color: #000;
+      display: block;
+      padding: 3px;
+    }
+    a.ui-state-hover, a.ui-state-active {
+      background-color: #FFFCB2;
+    }
+  }
+}
+
+ul.ui-menu-item:hover {
+  background-color: #FFF;
+}
+
+
+.ui-helper-hidden-accessible {
+  font-size: 0px;
+}
+
+
+

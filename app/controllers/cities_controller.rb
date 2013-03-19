@@ -10,13 +10,17 @@ class CitiesController < ApplicationController
     end
   end
 
+  def autocomplete_index
+    @cities = City.order(:city).where("CITY like ?", "#{params[:term]}%")
+    render json: @cities.map { |city| "#{city.city.titleize}, #{city.state}" }
+  end
 
   def index
     @cities = City.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @cities }
+      format.json { render json: @cities.map(&:city) }
     end
   end
 
@@ -28,7 +32,5 @@ class CitiesController < ApplicationController
     City.import(params[:file])
     redirect_to 'listCities', notice:"Cities imported"
   end
-
-
-
+  
 end

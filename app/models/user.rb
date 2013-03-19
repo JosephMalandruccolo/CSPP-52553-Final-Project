@@ -25,7 +25,6 @@ class User < ActiveRecord::Base
   ##########################################
   has_many :colleges, through: :statuses, dependent: :destroy
   has_many :statuses
-
   has_many :photos
 
 

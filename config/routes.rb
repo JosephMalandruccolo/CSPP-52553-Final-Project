@@ -42,7 +42,7 @@ CollegeLens::Application.routes.draw do
   # => CITIES ROUTES [ADMIN ONLY]
   ##########################################
   match 'updateCities', to: 'cities#import'
-  match 'listCities', to: 'cities#index'
+  match 'listCities', to: 'cities#autocomplete_index'
   match 'saveCities', to: 'cities#save'
  
 end

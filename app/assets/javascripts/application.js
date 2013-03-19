@@ -11,5 +11,10 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function() {
+  $('#user_hometown').autocomplete({ source: $('#user_hometown').data('autocomplete-source') });
+});
