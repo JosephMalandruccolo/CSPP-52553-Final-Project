@@ -61,18 +61,6 @@ class UsersController < ApplicationController
     end
 
 
-    @unique_states = []
-    City.select("DISTINCT(STATE)").each do |state|
-      #format [state, state] compatible with rails select
-      @unique_states.push([state[:state], state[:state]])
-    end
-
-
-    @hometowns = []
-
-    City.all.each do |town|
-      @hometowns.push(["#{town[:city]}, #{town[:state]}", town[:id]])
-    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -95,19 +83,6 @@ class UsersController < ApplicationController
       @birthYearRange.push(Time.now.year - year)
     end
 
-
-    @unique_states = []
-    City.select("DISTINCT(STATE)").each do |state|
-      #format [state, state] compatible with rails select
-      @unique_states.push([state[:state], state[:state]])
-    end
-
-
-    @hometowns = []
-
-    City.all.each do |town|
-      @hometowns.push(["#{town[:city]}, #{town[:state]}", town[:id]])
-    end
   end
 
   # POST /users

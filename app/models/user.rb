@@ -11,10 +11,10 @@ class User < ActiveRecord::Base
     "#{self.city}, #{self.state}" if self.city != nil
   end
 
-  def hometown=(id)
-    town = City.find_by_id(id)
-    self.city = town.city
-    self.state = town.state
+  def hometown=(cityState)
+    hometownArray = cityState.split(',')
+    self.city = hometownArray.first
+    self.state = hometownArray.last[hometownArray.last.length-2..hometownArray.last.length-1]
   end
 
 
