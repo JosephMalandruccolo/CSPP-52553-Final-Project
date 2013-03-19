@@ -66,6 +66,13 @@ class UsersController < ApplicationController
       @unique_states.push([state[:state], state[:state]])
     end
 
+
+    @hometowns = []
+
+    City.all.each do |town|
+      @hometowns.push(["#{town[:city]}, #{town[:state]}", town[:id]])
+    end
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }

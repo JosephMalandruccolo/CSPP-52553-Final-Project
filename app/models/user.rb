@@ -1,7 +1,23 @@
 class User < ActiveRecord::Base
-  attr_accessible :birthMonth, :birthYear, :birthday, :city, :email, :firstName, :gender, :lastName, :password, :password_confirmation, :state, :admin
+  attr_accessible :birthMonth, :birthYear, :birthday, :city, :email, :firstName, :gender, :lastName, :password, :password_confirmation, :state, :admin, :hometown
 
   has_secure_password
+
+
+  ##########################################
+  # => VIRTUAL ATTRIBUTES
+  ##########################################
+  def hometown
+    "#{self.city}, #{self.state}" if self.city != nil
+  end
+
+  def hometown=(id)
+    town = City.find_by_id(id)
+    self.city = town.city
+    self.state = town.state
+  end
+
+
 
 
   ##########################################

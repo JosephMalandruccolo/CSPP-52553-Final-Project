@@ -40,10 +40,7 @@
   </div>
   <div class="field">
     <p>Hometown:</p>
-    <%= f.select :state, options_for_select(@unique_states), prompt: "State:" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :city, placeholder: "City", size: small %>
+    <%= f.select :hometown , options_for_select(@hometowns), prompt: "Hometown:" %>
   </div>
   <div class="actions">
     <%= f.submit submit_text ||= "Submit" %>
