@@ -1,2 +1,50 @@
-<h1>Upload a photo for <%= @college.shortName %></h1>
-<p>Find me in app/views/photos/new.html.erb</p>
+<%= form_for @photo, url: url_for(:controller => 'photos', :action => 'create')  do |f| %>
+  <% if @photo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this college from being saved:</h2>
+
+      <ul>
+      <% @photo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.hidden_field :retained_photo_image %><br />
+  </div>
+  <div class="field">
+    <%= hidden_field_tag :college_id, @college_id %><br />
+  </div>
+   <div class="field">
+    <%= hidden_field_tag :user_id, session[:user_id] %><br />
+  </div>
+   
+
+  <div class="field">
+    <%= f.label :photo_image, "Attach a photo for #{@college_shortName}" %><br />
+    <%= f.file_field :photo_image, as: :file %><br />
+  </div>
+  <div class="field">
+    <%= f.label :remove_photo_image, "Check box to delete photo from CollegeLens" %>
+    <%= f.check_box :remove_photo_image, as: :boolean %><br />
+  </div>
+  <div class="field">
+    <%= f.label :caption, "Add a custom caption" %><br />
+    <%= f.text_field :caption %>
+  </div>
+  <div class="field">
+  	<%= f.label :tag, "Tag your photo:" %><br />
+    <%= f.radio_button :tag, 'campus' %> <%= f.label :tag, "Campus" %>
+    <%= f.radio_button :tag, 'events' %> <%= f.label :tag, "Events" %>
+    <%= f.radio_button :tag, 'people' %> <%= f.label :tag, "People" %>
+  </div>
+
+
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

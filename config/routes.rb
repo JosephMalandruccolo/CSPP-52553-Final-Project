@@ -5,6 +5,7 @@ CollegeLens::Application.routes.draw do
 
   get "colleges/photos/show"
   get "colleges/:id/photos/new", controller: "photos", action: "new", as: "new_photo_path"
+  post "colleges/:id/photos/create", controller: "photos", action: "create", as: "photos_path"
 
 
   resources :colleges do

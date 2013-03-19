@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :college_id, :user_id, :photo_image, :caption
+  attr_accessible :college_id, :user_id, :photo_image, :caption, :tag, :retained_photo_image, :remove_photo_image
 
   image_accessor :photo_image
 
@@ -15,10 +15,11 @@ class Photo < ActiveRecord::Base
   ##########################################
   validates :college_id, :presence => true
   validates :user_id, :presence => true
+  validates :tag, :presence => true
   validates :photo_image, :presence => true
-  validates_size_of :seal_image, maximum: 300.kilobytes
-  validates_property :format, of: :seal_image, :in => [:jpeg, :png, :gif, :jpg]
-  validates_property :mime_type, of: :seal_image, :in => ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'], case_sensitive: false
+  validates_size_of :photo_image, maximum: 300.kilobytes
+  validates_property :format, of: :photo_image, :in => [:jpeg, :png, :gif, :jpg]
+  validates_property :mime_type, of: :photo_image, :in => ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'], case_sensitive: false
 
 
 end

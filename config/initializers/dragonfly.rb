@@ -1,5 +1,5 @@
 require 'dragonfly'
-require ''
+require_relative 'secret'
 
 
 
@@ -8,23 +8,24 @@ require ''
 ###################################
 
 
-#app = Dragonfly[:images]
-#app.configure_with(:imagemagick)
-#app.configure_with(:rails)
+app = Dragonfly[:images]
+app.configure_with(:imagemagick)
+app.configure_with(:rails)
 
-#app.define_macro(ActiveRecord::Base, :image_accessor)
+
 
 ###################################
 # => AWS
 ###################################
-Dragonfly::App[:images].configure do |c| 
-  
-  c.datastore = Dragonfly::DataStorage::S3DataStore.new
-  
-  c.datastore.configure do |d| 
-    d.bucket_name = 'dragonfly_tutorial'
-    d.access_key_id = 'some_access_key_id'
-    d.secret_access_key = 'some_secret_access_key'
+if Rails.env.production?
+  app.configure do |c|
+    c.datastore = Dragonfly::DataStorage::S3DataStore.new(
+      :bucket_name => bucket_name,
+      :access_key_id => access_key,
+      :secret_access_key => secret_key
+    )
   end
-  
-end 
+end
+
+
+app.define_macro(ActiveRecord::Base, :image_accessor)
