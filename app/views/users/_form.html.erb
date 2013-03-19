@@ -38,6 +38,13 @@
     <%= f.select :birthday, (1..31), prompt: "Day:" %>
     <%= f.select :birthYear, @birthYearRange, prompt: "Year:" %>
   </div>
+
+  <div class="field">
+    <%= f.text_field :hometown, placeholder: "Hometown", size: large %>
+  </div>
+
+
+
   <div class="field">
     <p>Hometown:</p>
     <%= f.select :hometown , options_for_select(@hometowns), prompt: "Hometown:" %>

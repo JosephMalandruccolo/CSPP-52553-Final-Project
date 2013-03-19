@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @colleges_following = User.find(@user.id).colleges
 
     respond_to do |format|
       format.html # show.html.erb
@@ -82,6 +83,31 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
     @user = User.find(params[:id])
+
+    @month_options = []
+    Date::MONTHNAMES.slice(1..12).each do |month|
+      @month_options.push([month, month])
+    end
+
+
+    @birthYearRange = []
+    110.times do |year|
+      @birthYearRange.push(Time.now.year - year)
+    end
+
+
+    @unique_states = []
+    City.select("DISTINCT(STATE)").each do |state|
+      #format [state, state] compatible with rails select
+      @unique_states.push([state[:state], state[:state]])
+    end
+
+
+    @hometowns = []
+
+    City.all.each do |town|
+      @hometowns.push(["#{town[:city]}, #{town[:state]}", town[:id]])
+    end
   end
 
   # POST /users

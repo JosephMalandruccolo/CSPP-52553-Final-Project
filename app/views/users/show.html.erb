@@ -5,11 +5,22 @@
 
 
 
-<div class="info-col">
+<div id="info-col" class="shadow3">
   <%= avatar_for @user %>
   <p><%= @user.city%>, <%= @user.state %></p>
+  <%= link_to 'Edit my profile', edit_user_path(@user) %> |
+  <%= link_to 'Explore colleges', colleges_path %>
+</div>
+<div id="gridal">
+	<% if @colleges_following.count > 0 %>
+		<p>Following <%= "#{pluralize(@colleges_following.count, 'college')}" %></p>
+		<%	@colleges_following.each do |college| %>
+		<p><%= link_to "#{college.shortName}", college %></p>
+		<% end %>
+	<%	else %>
+		<p>Not following any colleges</p>
+		<%= link_to 'Start exploring', colleges_path %>
+	<% end %>
 </div>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>

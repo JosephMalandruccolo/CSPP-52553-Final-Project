@@ -9,8 +9,8 @@
   <%= render partial: 'layouts/status', :locals => { college: @college } %>
   <%= render 'photos/add_photo', college: @college %>
 
-  <%= link_to 'Edit', edit_college_path(@college) %> |
-  <%= link_to 'Back', colleges_path %>
+  <%= link_to 'Edit', edit_college_path(@college) if admin_user session[:user_id] %> |
+  <%= link_to 'Search colleges', colleges_path %>
 </div>
 <div id="gridal">
 	<table>
