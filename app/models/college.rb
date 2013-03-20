@@ -21,7 +21,7 @@ class College < ActiveRecord::Base
   validates :officialName, presence: true
   validates :shortName, :presence => true
   validates :website, presence: true
-  validates_size_of :seal_image, maximum: 300.kilobytes
+  validates_size_of :seal_image, maximum: 500.kilobytes
   validates_property :format, of: :seal_image, :in => [:jpeg, :png, :gif, :jpg]
   validates_property :mime_type, of: :seal_image, :in => ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'], case_sensitive: false
 
