@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
     hometownArray = cityState.split(',')
     self.city = hometownArray.first
     self.state = hometownArray.last[hometownArray.last.length-2..hometownArray.last.length-1]
+    
   end
 
 

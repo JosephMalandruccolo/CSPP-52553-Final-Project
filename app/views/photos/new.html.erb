@@ -1,4 +1,4 @@
-<%= form_for @photo, url: url_for(:controller => 'photos', :action => 'create')  do |f| %>
+<%= form_for @photo, url: url_for(:controller => 'photos', :action => 'create'), :validate => true  do |f| %>
   <% if @photo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@photo.errors.count, "error") %> prohibited this college from being saved:</h2>
@@ -23,7 +23,7 @@
    
 
   <div class="field">
-    <%= f.label :photo_image, "Attach a photo for #{@college_shortName}" %><br />
+    <%= f.label :photo_image, "Attach a photo for #{@college.shortName}" %><br />
     <%= f.file_field :photo_image, as: :file %><br />
   </div>
   <div class="field">
