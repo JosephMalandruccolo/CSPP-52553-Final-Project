@@ -12,6 +12,9 @@
   <%= link_to 'Edit', edit_college_path(@college) if admin_user session[:user_id] %> |
   <%= link_to 'Search colleges', colleges_path %>
   <div class="tweet">
+  	<%= image_tag 'twitter.png' %>
+  	<p class="handle">@<%= @college.twitter %></p>
+  	<p><%= @date %></p>
   	<p><%= "#{@text}" %></p>
   </div>
 </div>

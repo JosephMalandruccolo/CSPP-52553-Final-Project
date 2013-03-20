@@ -31,6 +31,7 @@ class CollegesController < ApplicationController
 
     @tweet = @result.first
     @text = @tweet["text"]
+    @date = Time.now.strftime("%b %d")
 
 
     respond_to do |format|

@@ -109,6 +109,37 @@ strong {
 }
 
 
+/*  twitter */
+.tweet {
+  background-color: #14b4f1;
+  margin-top: 30px;
+}
+
+
+.tweet img {
+  padding: 0px;
+  margin:0px;
+  position: relative;
+  float:left;
+}
+
+
+.tweet p {
+  color: white;
+  font-family: Helvetica, Arial, Veranda, sans-serif; 
+  
+  padding: 15px;
+}
+
+.handle {
+  color: white;
+  font-family: Helvetica, Arial, Veranda, sans-serif; 
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
 /*  individual photo page */
 .photo_caption {
   font-size: 14pt; 
