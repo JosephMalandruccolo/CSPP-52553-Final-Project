@@ -1,8 +1,4 @@
-require 'dragonfly'
 
-bucket_name = "collegeLens"
-access_key = "AKIAJWE527SPHAHZBQ7Q"
-secret_key = "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"
 
 
 
