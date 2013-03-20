@@ -16,6 +16,7 @@ end
 
 gem 'rack-cache', :require => 'rack/cache'
 gem 'dragonfly', '~>0.9.14'
+gem 'fog'
 
 # Gems used only for assets and not required
 # in production environments by default.
