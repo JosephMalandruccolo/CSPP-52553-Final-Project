@@ -26,6 +26,13 @@ class CollegesController < ApplicationController
     @college = College.find(params[:id])
     @college_photos = Photo.where(college_id: params[:id])
 
+    # => twitter api call
+    @result = JSON.parse(open("https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=#{@college.twitter}&count=1").read)
+
+    @tweet = @result.first
+    @text = @tweet["text"]
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @college }

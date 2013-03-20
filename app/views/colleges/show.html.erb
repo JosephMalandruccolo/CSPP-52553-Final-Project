@@ -11,6 +11,9 @@
 
   <%= link_to 'Edit', edit_college_path(@college) if admin_user session[:user_id] %> |
   <%= link_to 'Search colleges', colleges_path %>
+  <div class="tweet">
+  	<p><%= "#{@text}" %></p>
+  </div>
 </div>
 <div id="gridal">
 	<table>
