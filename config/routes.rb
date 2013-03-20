@@ -29,6 +29,13 @@ CollegeLens::Application.routes.draw do
 
   
   ##########################################
+  # => COMMENT
+  ##########################################
+  match '/comment', to: 'comments#create'
+
+
+
+  ##########################################
   # => SESSIONS
   ##########################################
   resources :sessions, :only => [:new, :create, :destroy]

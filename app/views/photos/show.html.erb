@@ -13,12 +13,23 @@
 <div id="gridal">
 	<%= image_tag @photo_to_show.photo_image.thumb('800x800>').url %>
 	<h3 class="photo_caption"><%= @photo_to_show.caption %></h3>
+  <br><br><br>
 	<% @commentable.each do |c| %>
 	<% u = User.find_by_id(c.user_id) %>
-  <br><br><br>
-  <!-- add user avatar on same line -->
+  <%= render 'users/avatar', args:('50x50#'), user: u %>
 	<p><%= c.text %> by <%= "#{u.firstName} #{u.lastName}" %></p>
 	<% end %>
 
   <!-- add comments go here -->
+  <%= form_tag("/comment", :method => "post") do %>
+    <%= hidden_field_tag(:commentable_id, @photo_to_show.id) %>
+    <%= hidden_field_tag(:commentable_type, @photo_to_show.class.to_s) %>
+    <%= hidden_field_tag(:college_id, @college.id) %>
+    <%= hidden_field_tag(:user_id, session[:user_id]) %>
+    <%= text_field_tag(:text) %>
+    <%= submit_tag("Comment") %>
+  <% end %>
+
+
+
 </div>
